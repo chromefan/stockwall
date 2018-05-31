@@ -52,6 +52,10 @@
                 <th>股票代码</th>
                 <th>股票名称</th>
                 <th>最新价格</th>
+                <th>当日涨幅</th>
+                <th>5日涨幅</th>
+                <th>10日涨幅</th>
+                <th>30日涨幅</th>
             </tr>
             </thead>
             <tbody>
@@ -60,6 +64,10 @@
                 <td>{{$stock->code}}</td>
                 <td>{{$stock->name}}</td>
                 <td>{{$stock->price}}</td>
+                <td>{{$stock->day1_chg}}</td>
+                <td>{{$stock->day5_chg}}</td>
+                <td>{{$stock->day10_chg}}</td>
+                <td>{{$stock->day30_chg}}</td>
             </tr>
             @endforeach
 
