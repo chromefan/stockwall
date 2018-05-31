@@ -1,0 +1,7 @@
+/node_modules
+/public/js/app.js
+/vendor
+/.idea
+.env
+composer.lock
+package-lock.json
