@@ -52,7 +52,7 @@ class Stat extends Command
         //最近5日
         $stat_day = date('Y-m-d',strtotime("-{$num} days"));
 
-        $data = Price::where('day',$today)->limit(300)->get();
+        $data = Price::where('day',$today)->get();
 
         foreach ($data as $v){
             $res = Price::where('day',$stat_day)->where('code',$v->code)->first();
