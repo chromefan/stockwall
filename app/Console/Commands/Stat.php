@@ -57,7 +57,9 @@ class Stat extends Command
         foreach ($data as $v){
             $res = Price::where('day',$stat_day)->where('code',$v->code)->first();
             if($res){
-                $chg = ($v->price - $res->price)/$res->price;
+                if($res->price <> 0){
+                    $chg = ($v->price - $res->price)/$res->price;
+                }
             }else{
                 $chg = 0;
             }
