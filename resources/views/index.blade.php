@@ -65,9 +65,9 @@
                 <td><span class="text-primary">{{$stock->name}}</span></td>
                 <td>{{$stock->price}}</td>
                 @if($stock->day1_chg > 0)
-                    <td><span class="text-danger">{{round($stock->day1_chg*100,2)}}%</span></td>
+                    <td><span class="text-danger">{{sprintf("%.2f",$stock->day1_chg*100)}}%</span></td>
                 @else
-                    <td><span class="text-success">{{round($stock->day1_chg*100,2)}}%</span></td>
+                    <td><span class="text-success">{{sprintf("%.2f",$stock->day1_chg*100)}}%</span></td>
                 @endif
 
                 <td>{{$stock->day5_chg}}</td>
