@@ -46,7 +46,7 @@
 @endif
 <div class="container">
     <div class="content">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th>股票代码</th>
@@ -62,9 +62,14 @@
             @foreach ($stocks as $k=> $stock)
             <tr>
                 <td>{{$stock->code}}</td>
-                <td>{{$stock->name}}</td>
+                <td><span class="text-primary">{{$stock->name}}</span></td>
                 <td>{{$stock->price}}</td>
-                <td>{{$stock->day1_chg}}</td>
+                @if($stock->day1_chg > 0)
+                    <td><span class="text-danger">{{round($stock->day1_chg*100,2)}}%</span></td>
+                @else
+                    <td><span class="text-success">{{round($stock->day1_chg*100,2)}}%</span></td>
+                @endif
+
                 <td>{{$stock->day5_chg}}</td>
                 <td>{{$stock->day10_chg}}</td>
                 <td>{{$stock->day30_chg}}</td>

@@ -14,7 +14,7 @@ class StockController extends Controller
      */
     public function index()
     {
-       $stocks =  Stock::orderBy('id')->paginate(15);
+       $stocks =  Stock::orderBy('day1_chg','desc')->paginate(15);
        return view('index', ['stocks' => $stocks]);
     }
 
