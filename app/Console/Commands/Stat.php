@@ -63,7 +63,12 @@ class Stat extends Command
             }else{
                 $chg = 0;
             }
-            $save_res = Stock::where('code',$v->code)->update(['day'.$num.'_chg'=>$chg,'updated_at'=>date('Y-m-d H:i:s')]);
+            $save_res = Stock::where('code',$v->code)->update([
+                'price' => $v->price,
+                'day'.$num.'_chg' => $chg,
+                'updated_at' => date('Y-m-d H:i:s')]
+            );
+
             echo "$num day {$v->code} : ".$save_res."\n";
         }
     }
