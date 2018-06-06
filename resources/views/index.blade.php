@@ -69,10 +69,21 @@
                 @else
                     <td><span class="text-success">{{sprintf("%.2f",$stock->day1_chg*100)}}%</span></td>
                 @endif
-
-                <td>{{$stock->day5_chg}}</td>
-                <td>{{$stock->day10_chg}}</td>
-                <td>{{$stock->day30_chg}}</td>
+                @if($stock->day5_chg > 0)
+                    <td><span class="text-danger">{{sprintf("%.2f",$stock->day5_chg*100)}}%</span></td>
+                @else
+                    <td><span class="text-success">{{sprintf("%.2f",$stock->day5_chg*100)}}%</span></td>
+                @endif
+                @if($stock->day10_chg > 0)
+                    <td><span class="text-danger">{{sprintf("%.2f",$stock->day10_chg*100)}}%</span></td>
+                @else
+                    <td><span class="text-success">{{sprintf("%.2f",$stock->day10_chg*100)}}%</span></td>
+                @endif
+                @if($stock->day30_chg > 0)
+                    <td><span class="text-danger">{{sprintf("%.2f",$stock->day30_chg*100)}}%</span></td>
+                @else
+                    <td><span class="text-success">{{sprintf("%.2f",$stock->day30_chg*100)}}%</span></td>
+                @endif
             </tr>
             @endforeach
 
