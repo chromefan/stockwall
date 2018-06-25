@@ -11,13 +11,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <!--第一步：引入Javascript / CSS （CDN）-->
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
-    <link href="css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+
     <link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -100,11 +95,5 @@
         {{ $stocks->links() }}
     </div>
 </div>
-<script>
-
-        $(document).ready( function () {
-        $('#stock-table').DataTable();
-    } );
-</script>
 </body>
 </html>
