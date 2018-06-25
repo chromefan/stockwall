@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!--第一步：引入Javascript / CSS （CDN）-->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -46,7 +54,7 @@
 @endif
 <div class="container">
     <div class="content">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" id="stock-table">
             <thead>
             <tr>
                 <th>股票代码</th>
@@ -92,5 +100,11 @@
         {{ $stocks->links() }}
     </div>
 </div>
+<script>
+
+        $(document).ready( function () {
+        $('#stock-table').DataTable();
+    } );
+</script>
 </body>
 </html>

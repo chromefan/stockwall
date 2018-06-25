@@ -56,6 +56,7 @@ class Stat extends Command
 
         foreach ($data as $v){
             $res = Price::where('day',$stat_day)->where('code',$v->code)->first();
+            $chg = 0;
             if($res){
                 if($res->price <> 0){
                     if($num==1){
