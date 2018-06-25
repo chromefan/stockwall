@@ -60,7 +60,7 @@ class Stat extends Command
             if($res){
                 if($res->price <> 0){
                     if($num==1){
-                        $chg = $v->price_change;
+                        $chg = ($v->price_change/100);
                     }else{
                         $chg = ($v->price - $res->price)/$res->price;
                     }
