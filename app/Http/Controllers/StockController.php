@@ -14,10 +14,10 @@ class StockController extends Controller
      */
     public function index()
     {
-       $stocks =  Stock::orderBy('day1_chg','desc')
-           ->orderBy('day5_chg','desc')
+       $stocks =  Stock::orderBy('day30_chg','desc')
            ->orderBy('day10_chg','desc')
-           ->orderBy('day30_chg','desc')->paginate(15);
+           ->orderBy('day5_chg','desc')
+           ->orderBy('day1_chg','desc')->paginate(15);
        return view('index', ['stocks' => $stocks]);
     }
 
